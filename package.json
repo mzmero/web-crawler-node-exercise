@@ -1,0 +1,17 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "crawler.js",
+  "scripts": {
+    "start": "crawler.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cheerio": "^1.0.0-rc.10"
+  }
+}
