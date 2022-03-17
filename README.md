@@ -22,15 +22,12 @@ npm i
 ```
 ## Run The App
 ```
-node crawler.js <desired link>
+node crawler.js <desired link> <desired depth>
 ```
 ## Approaches
 There are two approaches for this task , the first uses recursive function while the other uses a loop , the recursive is faster but has its disadvantages
 while the other is slow but can be improved with multitasking.
 ##### First approach with loop called crawler.js while the other one is called crawler2.js
-
-## Max Depth
-The program has a max depth of 3 , you can freely change it .
 
 ## Results
 ##### Results from each appreach are saved on results.json and results2.json
