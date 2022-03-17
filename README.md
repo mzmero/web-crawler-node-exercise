@@ -6,7 +6,6 @@
 * [Setup](#Setup)
 * [Run the app](#Run-The-App)
 * [Approaches](#Approaches)
-* [Max Depth](#Max-Depth)
 * [Results](#Results)
 
 ## Description
