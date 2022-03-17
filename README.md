@@ -21,15 +21,19 @@ npm i
 ```
 ## Run The App
 ```
-node crawler.js <desired link> <desired depth>
+node crawler_stack.js <desired link> <desired depth>
+```
+or
+```
+node crawler_recursive.js <desired link> <desired depth>
 ```
 ## Approaches
-There are two approaches for this task , the first uses recursive function while the other uses a loop , the recursive is faster but has its disadvantages
+There are two approaches for this task , the first uses recursive function while the other uses a stack , the recursive is faster but has its disadvantages
 while the other is slow but can be improved with multitasking.
 ##### First approach with loop called crawler.js while the other one is called crawler2.js
 
 ## Results
-##### Results from each appreach are saved on results.json and results2.json
+##### Results from each appreach are saved on results_recrursive.json and results_stack.json
 ##### Both are saved on format of {imageUrl: string,sourceUrl: string ,depth: number }
 
 
