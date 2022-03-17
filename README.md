@@ -2,6 +2,7 @@
 
 ## Table of contents
 * [Description](#Description)
+* [Requirement](#Requirement)
 * [Setup](#Setup)
 * [Run the app](#Run-The-App)
 * [Approaches](#Approaches)
@@ -10,6 +11,9 @@
 
 ## Description
 In this task we are going to build a simple web crawler to fetch all images
+
+## Requirement
+The program has only been tested on Node 16.13.2
 
 ## Setup
 To run this project, install it locally using npm
