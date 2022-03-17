@@ -3,8 +3,6 @@ import * as Cheerio from 'cheerio';
 import fs from 'fs'
 import * as urlParser from "url";
 
-//maxDepth
-const maxDepth = 3;
 const seenURL=[]
 
 
@@ -80,7 +78,7 @@ function start (url){
 }
 //cli url
 const originURL= process.argv[2]
-
+const maxDepth = process.argv[3]
 // open/overwrite result.json
-fs.writeFileSync('results2.json', JSON.stringify([]))
+fs.writeFileSync('results_recursive.json', JSON.stringify([]))
 start(originURL)

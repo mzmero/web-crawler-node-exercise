@@ -3,8 +3,7 @@ import * as Cheerio from 'cheerio';
 import fs from 'fs'
 import * as urlParser from "url";
 
-//maxDepth
-const maxDepth = 3;
+
 const seenURL=[]
 
 //check url and apply a change depend on what type it is
@@ -75,8 +74,9 @@ async function start (originURL){
         await crawl({"url":url ,"depth":depth,"stackObj":stackObj})
     }
     const temp= JSON.stringify(stackObj.results)
-    fs.writeFileSync("results.json", temp);
+    fs.writeFileSync("results_stack.json", temp);
 
 }
 const originURL= process.argv[2]
+const maxDepth = process.argv[3]
 start(originURL)
