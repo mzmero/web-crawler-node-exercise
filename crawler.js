@@ -1,23 +1,35 @@
 import axios from 'axios'
 import * as Cheerio from 'cheerio';
 import fs from 'fs'
+import * as urlParser from "url";
+
+
 const maxDepth = 3;
 const seenURL=[]
-const results = []
-function getURL({url,link}){
+
+function getURL({host,protocol,link}){
     if(link.includes('http'))
         return link;
     else if(link.startsWith('/')){
-        return url+link;
-    }
+        return `${protocol}//${host}${link}`;
+  } else {
+    return `${protocol}//${host}/${link}`;
+  }
 }
 
+
 async function add_images(images,url,depth){
+    const { host, protocol } = urlParser.parse(url);
     images.forEach((img,i)=>{
-        const _path = url + img
+        if(img.length>0){
+            let _path;
+        if(!img.startsWith("data:image"))
+            _path = getURL({"host":host,"protocol":protocol,"link":img})
+        else _path = img;
         const temp= JSON.stringify({"imageUrl":_path,"sourceUrl":url,"depth":depth})
         fs.writeFileSync("results.json", temp);
         //results.push({"imageUrl":_path,"sourceUrl":url,"depth":depth})
+        }
     })
 }
 
@@ -38,15 +50,16 @@ const crawl = async ({url,depth})=>{
         if(images.length > 0)
            await add_images(images,url,depth)
         const links = $("a").map((i,link)=>link.attribs.href).get()
+        const { host, protocol } = urlParser.parse(url);
         links.forEach((link,i)=>{
-            crawl({"url":getURL({"url":url,"link":link}),"depth":depth+1})
+            crawl({"url":getURL({"host":host,"protocol":protocol,"link":link}),"depth":depth+1})
         })
     }
     return ;
 }
 
- function start (url){
-   crawl({"url":originURL ,"depth":0})
+function start (url){
+   crawl({"url":url ,"depth":0})
 }
 const originURL= process.argv[2]
 start(originURL)
