@@ -28,11 +28,11 @@ async function add_images(images,url,depth){
                 _path = getURL({"host":host,"protocol":protocol,"link":img})
             else _path = img;
             try {
-                const rawdata = fs.readFileSync('results2.json');
+                const rawdata = fs.readFileSync('results_recursive.json');
                 const imagesObj = JSON.parse(rawdata);
                 imagesObj.push({"imageUrl":_path,"sourceUrl":url,"depth":depth})
                 const temp= JSON.stringify(imagesObj)
-                fs.writeFileSync("results2.json", temp);
+                fs.writeFileSync("results_recursive.json", temp);
             } catch (error) {
                 console.log(error)
             }
