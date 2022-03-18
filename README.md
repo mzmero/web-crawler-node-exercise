@@ -12,7 +12,7 @@
 In this task we are going to build a simple web crawler to fetch all images.
 
 ## Requirement
-Running the code require Node 16 or. above.
+Running the code requires Node 16 or. above.
 
 ## Setup
 To run this project, install it locally using npm
