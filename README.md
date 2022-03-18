@@ -33,7 +33,7 @@ while the other is slow but can be improved with multitasking.
 ##### First approach with loop called crawler.js while the other one is called crawler2.js
 
 ## Results
-##### Results from each appreach are saved on results_recrursive.json and results_stack.json
+##### Results from each appreach are saved on results_recursive.json and results_stack.json
 ##### Both are saved on format of {imageUrl: string,sourceUrl: string ,depth: number }
 
 
